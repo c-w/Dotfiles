@@ -52,3 +52,12 @@ noremap Y y$
 " Prevent auto-created files from cluttering working directory
 set backupdir=~/.vim/backup
 set directory=~/.vim/swap
+
+" Strip trailing whitespace
+fun! <SID>StripTrailingWhitespace()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+autocmd FileType * autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespace()
