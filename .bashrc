@@ -114,3 +114,21 @@ fi
 # Default editor.
 export VISUAL=vim
 export EDITOR=vim
+
+# include local installs of python libraries
+py_version=$(python -c 'import sys; print ".".join(map(str, sys.version_info[:2]))')
+py_local_libs="$HOME/local/lib/python$py_version/site-packages"
+if [ -d "$py_local_libs" ]; then
+    case $PYTHONPATH in
+        *$py_local_libs*) ;;
+        *) export PYTHONPATH="$py_local_libs:$PYTHONPATH" ;;
+    esac
+fi
+
+# include local binaries in path
+if [ -d "$HOME/local" ]; then
+    case $PATH in
+        *$HOME/local/bin*) ;;
+        *) export PATH="$HOME/local/bin:$PATH" ;;
+    esac
+fi
