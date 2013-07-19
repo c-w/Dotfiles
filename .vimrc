@@ -60,7 +60,8 @@ au VimResized * wincmd =
 " Consistency fixes
 noremap Y y$
 
-" Prevent auto-created files from cluttering working directory
+" Keep backups but prevent auto-created files from cluttering working directory
+set backup
 set backupdir=~/.vim/backup
 set directory=~/.vim/swap
 
