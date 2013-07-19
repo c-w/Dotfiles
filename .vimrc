@@ -1,3 +1,5 @@
+call pathogen#infect()
+
 " Line numbers, syntax highlighting, UI
 set number
 syntax on
