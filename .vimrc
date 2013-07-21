@@ -1,3 +1,4 @@
+source ~/.vim/bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
 " Line numbers, syntax highlighting, UI
