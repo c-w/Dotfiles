@@ -1,25 +1,31 @@
 [user]
 	name = c-w
 	email = clemens.wolff+github@gmail.com
+
 [credential]
 	helper = cache --timeout=43200
+
 [core]
 	editor = vim
     pager = less -R
+
 [color]
     ui = auto
     diff = auto
     status = auto
     branch = auto
+
 [color "diff"]
     meta = yellow bold
     frag = magenta bold
     old = red bold
     new = green bold
+
 [color "branch"]
     current = yellow reverse
     local = yellow
     remote = green
+
 [color "status"]
     added = yellow
     changed = green
