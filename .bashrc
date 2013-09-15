@@ -103,11 +103,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # Custom functions.
-# You may want to put all your functions into a separate file like
-# ~/.bash_functions, instead of adding them here directly.
-if [ -f ~/.bash_functions ]; then
-	. ~/.bash_functions
-fi
+function cd() {
+	builtin cd "$*" && ls
+}
 
 # Default editor.
 export VISUAL=vim
