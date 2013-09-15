@@ -124,6 +124,13 @@ if [ -d "$py_local_libs" ]; then
         *) export PYTHONPATH="$py_local_libs:$PYTHONPATH" ;;
     esac
 fi
+py_local_libs64="$HOME/local/lib64/python$py_version/site-packages"
+if [ -d "$py_local_libs64" ]; then
+    case $PYTHONPATH in
+        *$py_local_libs64*) ;;
+        *) export PYTHONPATH="$py_local_libs64:$PYTHONPATH" ;;
+    esac
+fi
 
 # include local binaries in path
 if [ -d "$HOME/local" ]; then
