@@ -7,6 +7,7 @@ syntax on
 set cursorline
 set showmatch
 set textwidth=80
+au BufRead,BufNewFile *.py set textwidth=79
 if exists('+colorcolumn')
     set colorcolumn=+1
 else
