@@ -41,10 +41,6 @@ inoremap <Left> <NOP>
 inoremap <Right> <NOP>
 inoremap <Up> <NOP>
 inoremap <Down> <NOP>
-inoremap jj <Esc>
-inoremap kk <Esc>
-inoremap kj <Esc>
-inoremap jk <Esc>
 nnoremap j gj
 nnoremap k gk
 vnoremap < <gv
