@@ -45,6 +45,7 @@ nnoremap j gj
 nnoremap k gk
 vnoremap < <gv
 vnoremap > >gv
+set autochdir
 
 " More natural splitting
 set splitright
