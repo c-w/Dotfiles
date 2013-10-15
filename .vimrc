@@ -16,6 +16,8 @@ endif
 
 " Change filetype-syntax highlighting from defaults
 au BufNewFile,BufRead *.pl setlocal ft=prolog
+au BufNewFile,BufRead *.frag setlocal ft=cpp
+au BufNewFile,BufRead *.vert setlocal ft=cpp
 
 " Indentation
 set tabstop=4
