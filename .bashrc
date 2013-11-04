@@ -135,3 +135,6 @@ if [ -d "$HOME/local" ]; then
         *) export PATH="$HOME/local/bin:$PATH" ;;
     esac
 fi
+
+# don't try to use graphical password prompts
+unset SSH_ASKPASS
