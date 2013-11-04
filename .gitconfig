@@ -1,6 +1,6 @@
 [user]
 	name = c-w
-	email = clemens.wolff+github@gmail.com
+	email = clemens.wolff+git@gmail.com
 
 [credential]
 	helper = cache --timeout=43200
