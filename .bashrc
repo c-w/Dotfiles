@@ -112,8 +112,8 @@ export VISUAL=vim
 export EDITOR=vim
 
 # manage multiple python versions
-export PYTHON2_VERSION=$(PYTHONPATH=""; python2 -c 'import sys;print ".".join(map(str,sys.version_info[:2]))')
-export PYTHON3_VERSION=$(PYTHONPATH=""; python3 -c 'import sys;print(".".join(map(str,sys.version_info[:2])))')
+command -v 'python2' > /dev/null && export PYTHON2_VERSION=$(PYTHONPATH=""; python2 -c 'import sys;print ".".join(map(str,sys.version_info[:2]))')
+command -v 'python3' > /dev/null && export PYTHON3_VERSION=$(PYTHONPATH=""; python3 -c 'import sys;print(".".join(map(str,sys.version_info[:2])))')
 
 function python3() {
     export PYTHONPATH="${PYTHONPATH//$PYTHON2_VERSION/$PYTHON3_VERSION}"
