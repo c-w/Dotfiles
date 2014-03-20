@@ -18,6 +18,8 @@ endif
 au BufNewFile,BufRead *.pl setlocal ft=prolog
 au BufNewFile,BufRead *.frag setlocal ft=cpp
 au BufNewFile,BufRead *.vert setlocal ft=cpp
+au BufNewFile,BufRead *.n3 setlocal ft=n3
+au BufNewFile,BufRead *.rq setlocal ft=sparql
 
 " Indentation
 set tabstop=4
