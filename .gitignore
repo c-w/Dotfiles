@@ -2,3 +2,6 @@
 .lesshst
 .viminfo
 .ssh
+.ipython
+.pip
+.python_history
