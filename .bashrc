@@ -111,40 +111,5 @@ function cd() {
 export VISUAL=vim
 export EDITOR=vim
 
-# manage multiple python versions
-command -v 'python2' > /dev/null && export PYTHON2_VERSION=$(PYTHONPATH=""; python2 -c 'import sys;print ".".join(map(str,sys.version_info[:2]))')
-command -v 'python3' > /dev/null && export PYTHON3_VERSION=$(PYTHONPATH=""; python3 -c 'import sys;print(".".join(map(str,sys.version_info[:2])))')
-
-function python3() {
-    export PYTHONPATH="${PYTHONPATH//$PYTHON2_VERSION/$PYTHON3_VERSION}"
-    /usr/bin/python3 "$@"
-}
-
-function python2() {
-    export PYTHONPATH="${PYTHONPATH//$PYTHON3_VERSION/$PYTHON2_VERSION}"
-    /usr/bin/python2 "$@"
-}
-
-# include local installs of python libraries
-for py_version in $PYTHON2_VERSION $PYTHON3_VERSION; do
-    for bit_version in '' 64; do
-        py_local_libs="$HOME/local/lib$bit_version/python$py_version/site-packages"
-        if [ -d "$py_local_libs" ]; then
-            case $PYTHONPATH in
-                *$py_local_libs*) ;;
-                *) export PYTHONPATH="$py_local_libs:$PYTHONPATH" ;;
-            esac
-        fi
-    done
-done
-
-# include local binaries in path
-if [ -d "$HOME/local" ]; then
-    case $PATH in
-        *$HOME/local/bin*) ;;
-        *) export PATH="$HOME/local/bin:$PATH" ;;
-    esac
-fi
-
 # don't try to use graphical password prompts
 unset SSH_ASKPASS
