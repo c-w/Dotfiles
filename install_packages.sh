@@ -20,3 +20,8 @@ install() {
 # systems stuff
 install man
 install curl
+
+# development stuff
+install git
+install tmux
+install vim
