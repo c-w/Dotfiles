@@ -1,7 +1,7 @@
 .bash_history
-.lesshst
-.viminfo
-.ssh
 .ipython
+.lesshst
 .pip
 .python_history
+.ssh
+.viminfo
