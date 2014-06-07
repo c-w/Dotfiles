@@ -25,3 +25,10 @@ install curl
 install git
 install tmux
 install vim
+
+# python stuff
+install python
+install python3
+curl https://bootstrap.pypa.io/get-pip.py | sudo python
+sudo pip install ipython
+sudo pip install virtualenv
