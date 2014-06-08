@@ -4,4 +4,5 @@
 .pip
 .python_history
 .ssh
+.vim/.netrwhist
 .viminfo
