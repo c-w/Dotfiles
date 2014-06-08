@@ -26,6 +26,7 @@ install build-essential
 install git
 install tmux
 install vim
+install cloc
 install ant
 
 # python stuff
