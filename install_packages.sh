@@ -13,10 +13,8 @@ sudo apt-get install vim
 sudo apt-get install cloc
 
 # java stuff
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get update
-sudo apt-get install oracle-java7-installer
-sudo apt-get install oracle-java7-set-default
+sudo add-apt-repository ppa:webupd8team/java && sudo apt-get update
+sudo apt-get install oracle-java7-installer oracle-java7-set-default
 sudo apt-get install ant
 
 # python stuff
