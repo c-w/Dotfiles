@@ -22,6 +22,7 @@ install man
 install curl
 
 # development stuff
+install build-essential
 install git
 install tmux
 install vim
