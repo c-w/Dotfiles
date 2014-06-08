@@ -4,6 +4,7 @@ set -o errexit
 set -o nounset
 
 fatal() { echo "$@" 1>&2 && exit 1; }
+exists() { command -v "$1" >/dev/null 2>&1; }
 
 install() {
     local args="$@"
@@ -16,6 +17,8 @@ install() {
 
     sudo ${installer} ${args}
 }
+
+pypckg() { exists pip || install python-pip; sudo pip install "$@"; }
 
 # systems stuff
 install man
@@ -32,6 +35,5 @@ install ant
 # python stuff
 install python
 install python3
-curl https://bootstrap.pypa.io/get-pip.py | sudo python
-sudo pip install ipython
-sudo pip install virtualenv
+pypckg ipython
+pypckg virtualenv
