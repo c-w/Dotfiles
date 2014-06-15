@@ -20,6 +20,7 @@ sudo apt-get install ant
 # python stuff
 sudo apt-get install python
 sudo apt-get install python3
+sudo apt-get install python-dev
 sudo apt-get install python-pip
 sudo pip install ipython
 sudo pip install virtualenv
