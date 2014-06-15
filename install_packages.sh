@@ -23,3 +23,4 @@ sudo apt-get install python3
 sudo apt-get install python-pip
 sudo pip install ipython
 sudo pip install virtualenv
+sudo pip install flake8
