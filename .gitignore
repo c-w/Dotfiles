@@ -3,6 +3,7 @@
 .lesshst
 .m2
 .pip
+.psql_history
 .python_history
 .ssh
 .vim/.netrwhist
