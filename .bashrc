@@ -22,7 +22,15 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # show directory contents after naviation
-cd() { builtin cd "$*" && ls; }
+cd() {
+    builtin cd "$*";
+    nfiles=$(ls . | wc -l)
+    if [ $nfiles -lt 100 ]; then
+        ls
+    else
+        echo "(${nfiles} files)"
+    fi
+}
 
 # aliases
 alias ll='ls -alF'
