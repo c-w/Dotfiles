@@ -9,8 +9,8 @@ export HISTFILESIZE=20000
 # standard stuff
 shopt -s checkwinsize
 shopt -s globstar
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-[ -f /etc/bash_completion ] && ! shopt -oq posix && . /etc/bash_completion
+if [ -x /usr/bin/lesspipe ]; then eval "$(SHELL=/bin/sh lesspipe)"; fi
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then . /etc/bash_completion; fi
 
 # use colors by default if possible
 if [ -x /usr/bin/dircolors ]; then
