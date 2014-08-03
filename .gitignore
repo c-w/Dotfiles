@@ -4,6 +4,7 @@
 .m2
 .pip
 .psql_history
+.pypirc
 .python_history
 .ssh
 .vim/.netrwhist
