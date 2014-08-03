@@ -4,6 +4,7 @@
 .m2
 .pip
 .psql_history
+.pylint.d
 .pypirc
 .python_history
 .ssh
