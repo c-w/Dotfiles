@@ -8,6 +8,7 @@ set cursorline
 set showmatch
 set textwidth=80
 au BufRead,BufNewFile *.py set textwidth=79
+au BufRead,BufNewFile *.tsv set textwidth=999
 if exists('+colorcolumn')
     set colorcolumn=+1
 else
