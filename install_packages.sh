@@ -25,3 +25,14 @@ sudo apt-get -y install python-pip
 sudo pip install ipython
 sudo pip install virtualenv
 sudo pip install flake8
+
+# setup stuff
+dotfiles_dir="$HOME/dotfiles"
+[ ! -d "${dotfiles_dir}" ] && git clone https://c-w@bitbucket.org/c-w/dotfiles.git "${dotfiles_dir}"
+find "${dotfiles_dir}" \( \
+        -name ".*" -and \
+        -not -wholename "*.git/*" -and \
+        -not -name "*.git" -and \
+        -not -name "*.gitignore" -and \
+        -not -name "*.gitmodules" \) \
+    -exec ln -f -s {} ~/ \;
