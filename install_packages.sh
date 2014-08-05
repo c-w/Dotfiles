@@ -25,6 +25,7 @@ sudo apt-get -y install python-pip
 sudo pip install ipython
 sudo pip install virtualenv
 sudo pip install flake8
+sudo pip install pylint
 
 # setup stuff
 dotfiles_dir="$HOME/dotfiles"
