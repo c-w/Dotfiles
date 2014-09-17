@@ -17,7 +17,7 @@ TMUX_STATUS_DEFINITION() {
     # $GIT_FLAGS ( which is an array of flags ), and pretty much any variable
     # used in this script :-)
 
-    GIT_BRANCH="Git branch: $GIT_BRANCH"
+    GIT_BRANCH="$GIT_BRANCH"
 
     TMUX_STATUS="$GIT_BRANCH$GIT_DIRTY"
 
@@ -93,13 +93,6 @@ update_tmux() {
             GIT_FLAGS=($GIT_STASH)
 
             TMUX_STATUS_DEFINITION
-
-            if [ "$GIT_DIRTY" ]; then
-                tmux set-window-option status-$TMUX_STATUS_LOCATION-attr bright > /dev/null
-            else
-                tmux set-window-option status-$TMUX_STATUS_LOCATION-attr none > /dev/null
-            fi
-
 
             tmux set-window-option status-$TMUX_STATUS_LOCATION "$TMUX_STATUS" > /dev/null
 
