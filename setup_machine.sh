@@ -49,7 +49,7 @@ pip_install virtualenv
 pip_install flake8
 pip_install pylint
 
-# setup stuff
+# setup dot-files
 dotfiles_dir="$HOME/Dotfiles"
 [ ! -d "${dotfiles_dir}" ] && git clone --recursive https://github.com/c-w/Dotfiles.git "${dotfiles_dir}"
 find "${dotfiles_dir}" \( \
