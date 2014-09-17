@@ -1,5 +1,15 @@
 #!/bin/sh
 
+# helper functions
+add_apt_repository() {
+    local ppa="$1"
+    grep -q "^deb.*${ppa}" /etc/apt/sources.list.d/*
+    if [ $? -ne 0 ]; then
+        sudo add-apt-repository -y "ppa:${ppa}"
+        sudo apt-get update
+    fi
+}
+
 # systems stuff
 sudo apt-get -y install man
 sudo apt-get -y install curl
@@ -13,7 +23,7 @@ sudo apt-get -y install vim
 sudo apt-get -y install cloc
 
 # java stuff
-sudo add-apt-repository -y ppa:webupd8team/java && sudo apt-get update
+add_apt_repository webupd8team/java
 sudo apt-get -y install oracle-java7-installer oracle-java7-set-default
 sudo apt-get -y install ant
 
