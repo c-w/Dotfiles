@@ -3,7 +3,7 @@
 # helper functions
 apt_get_install() {
     local package="$1"
-    sudo apt-get -y apt_get_install "${package}"
+    sudo apt-get -y install "${package}"
 }
 
 pip_install() {
