@@ -1,6 +1,16 @@
 #!/bin/sh
 
 # helper functions
+apt_get_install() {
+    local package="$1"
+    sudo apt-get -y apt_get_install "${package}"
+}
+
+pip_install() {
+    local package="$1"
+    sudo pip install "${package}"
+}
+
 add_apt_repository() {
     local ppa="$1"
     grep -q "^deb.*${ppa}" /etc/apt/sources.list.d/*
@@ -11,33 +21,33 @@ add_apt_repository() {
 }
 
 # systems stuff
-sudo apt-get -y install man
-sudo apt-get -y install curl
-sudo apt-get -y install software-properties-common
-sudo apt-get -y install python-software-properties
+apt_get_install man
+apt_get_install curl
+apt_get_install software-properties-common
+apt_get_install python-software-properties
 
 # development stuff
-sudo apt-get -y install build-essential
-sudo apt-get -y install git
-sudo apt-get -y install tmux
-sudo apt-get -y install vim
-sudo apt-get -y install cloc
+apt_get_install build-essential
+apt_get_install git
+apt_get_install tmux
+apt_get_install vim
+apt_get_install cloc
 
 # java stuff
 add_apt_repository webupd8team/java
-sudo apt-get -y install oracle-java7-installer
-sudo apt-get -y install oracle-java7-set-default
-sudo apt-get -y install ant
+apt_get_install oracle-java7-installer
+apt_get_install oracle-java7-set-default
+apt_get_install ant
 
 # python stuff
-sudo apt-get -y install python
-sudo apt-get -y install python3
-sudo apt-get -y install python-dev
-sudo apt-get -y install python-pip
-sudo pip install ipython
-sudo pip install virtualenv
-sudo pip install flake8
-sudo pip install pylint
+apt_get_install python
+apt_get_install python3
+apt_get_install python-dev
+apt_get_install python-pip
+pip_install ipython
+pip_install virtualenv
+pip_install flake8
+pip_install pylint
 
 # setup stuff
 dotfiles_dir="$HOME/Dotfiles"
