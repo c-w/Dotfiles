@@ -44,8 +44,9 @@ alias ......="cd ../../../../.."
 alias .......="cd ../../../../../.."
 alias ........="cd ../../../../../../.."
 
-# tab completions
+# source extra files
 [ -f ~/.git-completion.sh ] && . ~/.git-completion.sh
+[ -f ~/.tmux-git.sh ] && . ~/.tmux-git.sh
 
 # default editor.
 export VISUAL=vim
