@@ -44,6 +44,9 @@ alias ......="cd ../../../../.."
 alias .......="cd ../../../../../.."
 alias ........="cd ../../../../../../.."
 
+# tab completions
+[ -f ~/.git-completion.sh ] && . ~/.git-completion.sh
+
 # default editor.
 export VISUAL=vim
 export EDITOR=vim
