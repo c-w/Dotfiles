@@ -29,7 +29,7 @@ sudo pip install pylint
 
 # setup stuff
 dotfiles_dir="$HOME/dotfiles"
-[ ! -d "${dotfiles_dir}" ] && git clone https://c-w@bitbucket.org/c-w/dotfiles.git "${dotfiles_dir}"
+[ ! -d "${dotfiles_dir}" ] && git clone --recursive https://c-w@bitbucket.org/c-w/dotfiles.git "${dotfiles_dir}"
 find "${dotfiles_dir}" \( \
         -name ".*" -and \
         -not -wholename "*.git/*" -and \
