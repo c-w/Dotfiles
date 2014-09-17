@@ -28,8 +28,8 @@ sudo pip install flake8
 sudo pip install pylint
 
 # setup stuff
-dotfiles_dir="$HOME/dotfiles"
-[ ! -d "${dotfiles_dir}" ] && git clone --recursive https://github.com/c-w/dotfiles.git "${dotfiles_dir}"
+dotfiles_dir="$HOME/Dotfiles"
+[ ! -d "${dotfiles_dir}" ] && git clone --recursive https://github.com/c-w/Dotfiles.git "${dotfiles_dir}"
 find "${dotfiles_dir}" \( \
         -name ".*" -and \
         -not -wholename "*.git/*" -and \
