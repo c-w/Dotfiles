@@ -13,7 +13,8 @@ add_apt_repository() {
 # systems stuff
 sudo apt-get -y install man
 sudo apt-get -y install curl
-sudo apt-get -y install software-properties-common python-software-properties
+sudo apt-get -y install software-properties-common
+sudo apt-get -y install python-software-properties
 
 # development stuff
 sudo apt-get -y install build-essential
@@ -24,7 +25,8 @@ sudo apt-get -y install cloc
 
 # java stuff
 add_apt_repository webupd8team/java
-sudo apt-get -y install oracle-java7-installer oracle-java7-set-default
+sudo apt-get -y install oracle-java7-installer
+sudo apt-get -y install oracle-java7-set-default
 sudo apt-get -y install ant
 
 # python stuff
