@@ -63,6 +63,7 @@ au VimResized * wincmd =
 
 " Consistency fixes
 noremap Y y$
+nnoremap Q <NOP>
 
 " Keep backups but prevent auto-created files from cluttering working directory
 set backup
