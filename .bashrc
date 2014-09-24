@@ -51,6 +51,7 @@ alias ........="cd ../../../../../../.."
 # default editor.
 export VISUAL=vim
 export EDITOR=vim
+export TERM=xterm
 
 # don't use graphical password prompts
 unset SSH_ASKPASS
