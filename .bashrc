@@ -2,7 +2,7 @@
 
 # history management
 export HISTCONTROL=ignoreboth:erasedups
-shopt -s histappend
+(shopt | grep -q histappend) && shopt -s histappend
 export HISTSIZE=10000
 export HISTFILESIZE=20000
 
