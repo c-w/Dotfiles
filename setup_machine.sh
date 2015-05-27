@@ -35,8 +35,8 @@ apt_get_install cloc
 
 # java stuff
 add_apt_repository webupd8team/java
-apt_get_install oracle-java7-installer
-apt_get_install oracle-java7-set-default
+apt_get_install oracle-java8-installer
+apt_get_install oracle-java8-set-default
 apt_get_install ant
 
 # python stuff
