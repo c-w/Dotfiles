@@ -30,6 +30,7 @@ apt_get_update
 # systems stuff
 apt_get_install man
 apt_get_install curl
+apt_get_install htop
 apt_get_install software-properties-common
 apt_get_install python-software-properties
 
