@@ -33,12 +33,6 @@ apt_get_install tmux
 apt_get_install vim
 apt_get_install cloc
 
-# java stuff
-add_apt_repository webupd8team/java
-apt_get_install oracle-java8-installer
-apt_get_install oracle-java8-set-default
-apt_get_install ant
-
 # python stuff
 apt_get_install python
 apt_get_install python3
