@@ -15,13 +15,6 @@ elseif exists('matchadd')
     au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 
-" Change filetype-syntax highlighting from defaults
-au BufNewFile,BufRead *.pl setlocal ft=prolog
-au BufNewFile,BufRead *.frag setlocal ft=cpp
-au BufNewFile,BufRead *.vert setlocal ft=cpp
-au BufNewFile,BufRead *.n3 setlocal ft=n3
-au BufNewFile,BufRead *.rq setlocal ft=sparql
-
 " Indentation
 set tabstop=4
 set softtabstop=4
