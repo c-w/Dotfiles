@@ -1,6 +1,11 @@
 #!/bin/sh
 
 # helper functions
+apt_get_update() {
+    sudo apt-get update
+    sudo apt-get upgrade
+}
+
 apt_get_install() {
     local package="$1"
     sudo apt-get -y install "${package}"
@@ -19,6 +24,8 @@ add_apt_repository() {
         sudo apt-get update
     fi
 }
+
+apt_get_update
 
 # systems stuff
 apt_get_install man
