@@ -7,8 +7,6 @@ syntax on
 set cursorline
 set showmatch
 set textwidth=80
-au BufRead,BufNewFile *.py set textwidth=79
-au BufRead,BufNewFile *.tsv set textwidth=99999
 if exists('+colorcolumn')
     set colorcolumn=+1
 elseif exists('matchadd')
@@ -71,3 +69,7 @@ fun! <SID>StripTrailingWhitespace()
     call cursor(l, c)
 endfun
 autocmd FileType * autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespace()
+
+" File-type specific modifications
+au BufRead,BufNewFile *.py set textwidth=79
+au BufRead,BufNewFile *.tsv set textwidth=99999
