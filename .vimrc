@@ -73,3 +73,4 @@ autocmd FileType * autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespa
 " File-type specific modifications
 au BufRead,BufNewFile *.py set textwidth=79
 au BufRead,BufNewFile *.tsv set textwidth=99999
+au FileType gitcommit set textwidth=72 | set spell | set colorcolumn=50
