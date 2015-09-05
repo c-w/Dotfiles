@@ -33,6 +33,7 @@ apt_get_install curl
 apt_get_install htop
 apt_get_install software-properties-common
 apt_get_install python-software-properties
+apt_get_install aspell-en
 
 # development stuff
 apt_get_install build-essential
