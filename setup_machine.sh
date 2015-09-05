@@ -16,15 +16,6 @@ pip_install() {
     sudo pip install "${package}"
 }
 
-add_apt_repository() {
-    local ppa="$1"
-    grep -q "^deb.*${ppa}" /etc/apt/sources.list.d/*
-    if [ $? -ne 0 ]; then
-        sudo add-apt-repository -y "ppa:${ppa}"
-        sudo apt-get update
-    fi
-}
-
 apt_get_update
 
 # systems stuff
