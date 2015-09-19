@@ -12,6 +12,9 @@ shopt -s checkwinsize
 if [ -x /usr/bin/lesspipe ]; then eval "$(SHELL=/bin/sh lesspipe)"; fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then . /etc/bash_completion; fi
 
+# set up the terminal prompt
+export PS1='\u@\H:\w$ '
+
 # use colors by default if possible
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
