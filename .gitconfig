@@ -20,6 +20,8 @@
     ci = commit --verbose
     ap = add --patch
     st = status
+    co = checkout
+    d = diff
 
 [push]
 	default = current
