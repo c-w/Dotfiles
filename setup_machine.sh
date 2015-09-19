@@ -71,7 +71,8 @@ python_install pylint
 
 # setup dot-files
 dotfiles_dir="$HOME/Dotfiles"
-[ ! -d "${dotfiles_dir}" ] && git clone --recursive https://github.com/c-w/Dotfiles.git "${dotfiles_dir}"
+dotfiles_repo='https://github.com/c-w/Dotfiles.git'
+[ ! -d "${dotfiles_dir}" ] && git clone --recursive "${dotfiles_repo}" "${dotfiles_dir}"
 find "${dotfiles_dir}" \( \
         -name ".*" -and \
         -not -wholename "*.git/*" -and \
