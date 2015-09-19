@@ -45,40 +45,44 @@ python_update() {
     sudo pip install --upgrade "${package}"
 }
 
-system_update
+main() {
+    system_update
 
-# systems stuff
-system_install man
-system_install curl
-system_install htop
-system_install software-properties-common
-system_install python-software-properties
-system_install aspell-en
+    # systems stuff
+    system_install man
+    system_install curl
+    system_install htop
+    system_install software-properties-common
+    system_install python-software-properties
+    system_install aspell-en
 
-# development stuff
-system_install build-essential
-system_install git
-system_install tmux
-system_install vim
-system_install cloc
+    # development stuff
+    system_install build-essential
+    system_install git
+    system_install tmux
+    system_install vim
+    system_install cloc
 
-# python stuff
-system_install python
-system_install python3
-system_install python-dev
-system_install python-pip
-python_update pip
-python_install ipython
-python_install virtualenv
-python_install flake8
-python_install pylint
+    # python stuff
+    system_install python
+    system_install python3
+    system_install python-dev
+    system_install python-pip
+    python_update pip
+    python_install ipython
+    python_install virtualenv
+    python_install flake8
+    python_install pylint
 
-# setup dot-files
-[ ! -d "${dotfiles_dir}" ] && git clone --recursive "${dotfiles_repo}" "${dotfiles_dir}"
-find "${dotfiles_dir}" \( \
-        -name ".*" -and \
-        -not -wholename "*.git/*" -and \
-        -not -name "*.git" -and \
-        -not -name "*.gitignore" -and \
-        -not -name "*.gitmodules" \) \
-    -exec ln -f -s {} ~/ \;
+    # setup dot-files
+    [ ! -d "${dotfiles_dir}" ] && git clone --recursive "${dotfiles_repo}" "${dotfiles_dir}"
+    find "${dotfiles_dir}" \( \
+            -name ".*" -and \
+            -not -wholename "*.git/*" -and \
+            -not -name "*.git" -and \
+            -not -name "*.gitignore" -and \
+            -not -name "*.gitmodules" \) \
+        -exec ln -f -s {} ~/ \;
+}
+
+main
