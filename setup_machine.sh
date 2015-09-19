@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# constants
+readonly dotfiles_dir="$HOME/Dotfiles"
+readonly dotfiles_repo='https://github.com/c-w/Dotfiles.git'
+
 # helper functions
 error() {
     local message="$1"
@@ -70,8 +74,6 @@ python_install flake8
 python_install pylint
 
 # setup dot-files
-dotfiles_dir="$HOME/Dotfiles"
-dotfiles_repo='https://github.com/c-w/Dotfiles.git'
 [ ! -d "${dotfiles_dir}" ] && git clone --recursive "${dotfiles_repo}" "${dotfiles_dir}"
 find "${dotfiles_dir}" \( \
         -name ".*" -and \
