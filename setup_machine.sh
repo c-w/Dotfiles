@@ -1,14 +1,34 @@
 #!/bin/sh
 
 # helper functions
+error() {
+    local message="$1"
+    echo "${message}" >&2
+    exit 1
+}
+
+check_program_exists() {
+     local program="$1"
+     hash "${program}" 2>/dev/null
+}
+
+package_manager() {
+    local manager=''
+    $(check_program_exists 'apt-get') && manager='apt-get'
+    $(check_program_exists 'yum') && manager='yum'
+    [ -n "${manager}" ] \
+        && echo "${manager}" \
+        || error "no package manager found"
+}
+
 system_update() {
-    sudo apt-get update
-    sudo apt-get upgrade
+    sudo "$(package_manager)" update
+    sudo "$(package_manager)" upgrade
 }
 
 system_install() {
     local package="$1"
-    sudo apt-get -y install "${package}"
+    sudo "$(package_manager)" -y install "${package}"
 }
 
 python_install() {
