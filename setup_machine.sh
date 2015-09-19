@@ -36,6 +36,11 @@ python_install() {
     sudo pip install "${package}"
 }
 
+python_update() {
+    local package="$1"
+    sudo pip install --upgrade "${package}"
+}
+
 system_update
 
 # systems stuff
@@ -58,6 +63,7 @@ system_install python
 system_install python3
 system_install python-dev
 system_install python-pip
+python_update pip
 python_install ipython
 python_install virtualenv
 python_install flake8
