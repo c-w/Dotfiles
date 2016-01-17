@@ -71,6 +71,9 @@ endfun
 autocmd FileType * autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespace()
 
 " File-type specific modifications
+au BufRead,BufNewFile *.js set tabstop=2
+au BufRead,BufNewFile *.js set softtabstop=2
+au BufRead,BufNewFile *.js set shiftwidth=2
 au BufRead,BufNewFile *.py set textwidth=79
 au BufRead,BufNewFile *.tsv set textwidth=99999
 au FileType gitcommit set textwidth=72 | set spell | set colorcolumn=50
