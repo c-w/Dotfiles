@@ -20,6 +20,7 @@
     ci = commit --verbose
     ap = add --patch
     pr = pull --rebase --autostash
+    ri = rebase -i origin/master --autostash
     p = push
     st = status
     co = checkout
