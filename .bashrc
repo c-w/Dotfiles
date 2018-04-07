@@ -24,7 +24,8 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# show directory contents after naviation
+# utility functions
+
 cd() {
     builtin cd "$*";
     nfiles=$(ls . | wc -l)
@@ -33,6 +34,10 @@ cd() {
     else
         echo "(${nfiles} files)"
     fi
+}
+
+random_string() {
+    < /dev/urandom tr -dc '_A-Z-a-z-0-9' | head -c${1:-32}
 }
 
 # aliases
