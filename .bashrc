@@ -35,18 +35,6 @@ cd() {
     fi
 }
 
-# pop up to the git-root to run make
-make() {
-    local gitdir="$(git rev-parse --show-toplevel 2> /dev/null)"
-    if [ $? -eq 0 ]; then
-        builtin cd "${gitdir}" > /dev/null
-        /usr/bin/make $@
-        builtin cd - > /dev/null
-    else
-        /usr/bin/make $@
-    fi
-}
-
 # aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -54,10 +42,6 @@ alias l='ls -CF'
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias ......="cd ../../../../.."
-alias .......="cd ../../../../../.."
-alias ........="cd ../../../../../../.."
 
 # source extra files
 [ -f ~/.git-completion.sh ] && . ~/.git-completion.sh
