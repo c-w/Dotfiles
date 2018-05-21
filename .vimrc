@@ -29,14 +29,7 @@ set ignorecase
 set backspace=indent,eol,start
 set scrolloff=3
 set scrolljump=6
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-inoremap <Left> <NOP>
-inoremap <Right> <NOP>
-inoremap <Up> <NOP>
-inoremap <Down> <NOP>
+
 nnoremap j gj
 nnoremap k gk
 vnoremap < <gv
