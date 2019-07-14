@@ -42,16 +42,6 @@ system_install() {
     sudo "$(package_manager)" -y install "${package}"
 }
 
-python_install() {
-    local package="$1"
-    sudo pip install "${package}"
-}
-
-python_update() {
-    local package="$1"
-    sudo pip install --upgrade "${package}"
-}
-
 
 ################################################################################
 # main
@@ -76,15 +66,10 @@ main() {
     system_install cloc
 
     # python stuff
-    system_install python
     system_install python3
-    system_install python-dev
-    system_install python-pip
-    python_update pip
-    python_install ipython
-    python_install virtualenv
-    python_install flake8
-    python_install pylint
+    system_install python3-dev
+    system_install python3-pip
+    system_install python3-venv
 
     # setup dot-files
     [ ! -d "${dotfiles_dir}" ] && git clone --recursive "${dotfiles_repo}" "${dotfiles_dir}"
