@@ -45,6 +45,14 @@ main() {
     . "$NVM_DIR/nvm.sh"
     nvm install --lts
 
+    # editors
+    sudo snap install code --classic
+
+    # browsers
+    wget "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+    sudo dpkg -i "google-chrome-stable_current_amd64.deb"
+    rm "google-chrome-stable_current_amd64.deb"
+
     # setup dot-files
     [ ! -d "${dotfiles_dir}" ] && git clone --recursive "${dotfiles_repo}" "${dotfiles_dir}"
     find "${dotfiles_dir}" \( \
