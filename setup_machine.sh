@@ -41,7 +41,8 @@ main() {
 
     # node
     curl -fsSL "https://raw.githubusercontent.com/nvm-sh/nvm/${nvm_version}/install.sh" | bash
-    source "$HOME/.nvm/nvm.sh"
+    export NVM_DIR="$HOME/.nvm"
+    . "$NVM_DIR/nvm.sh"
     nvm install --lts
 
     # setup dot-files
