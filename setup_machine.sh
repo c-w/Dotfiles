@@ -16,7 +16,6 @@ main() {
         jq \
         htop \
         software-properties-common \
-        python-software-properties \
         aspell-en
 
     # development stuff
