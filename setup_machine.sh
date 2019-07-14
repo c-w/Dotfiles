@@ -13,6 +13,7 @@ main() {
     sudo apt-get install -y \
         man \
         curl \
+        jq \
         htop \
         software-properties-common \
         python-software-properties \
