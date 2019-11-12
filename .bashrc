@@ -37,7 +37,7 @@ cd() {
 }
 
 random_string() {
-    < /dev/urandom tr -dc '_A-Z-a-z-0-9' | head -c${1:-32}
+    LC_ALL=C < /dev/urandom tr -dc '_A-Z-a-z-0-9' | head -c${1:-32}
 }
 
 # aliases
