@@ -48,3 +48,6 @@
     added = yellow
     changed = green
     untracked = cyan
+
+[reset]
+    quiet = true
