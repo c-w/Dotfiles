@@ -26,9 +26,9 @@
     st = status
     co = checkout
     cb = checkout -b
-    d = diff --find-renames
+    d = diff --find-renames --ignore-all-space
     b = branch
-    ds = diff --staged --find-renames
+    ds = diff --staged --find-renames --ignore-all-space
 
 [push]
     default = current
