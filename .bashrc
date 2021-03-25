@@ -16,12 +16,15 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then . /etc/bash_completion
 export PS1='\u@\H:\w$ '
 
 # use colors by default if possible
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+num_colors="$(tput colors 2> /dev/null)"
+if [ $? = 0 ] && [ "$num_colors" -gt 2 ]; then
+    if ls --color=auto >/dev/null 2>&1; then
+        alias ls='ls --color=auto'
+        alias grep='grep --color=auto'
+    elif ls -G >/dev/null 2>&1; then
+        alias ls='ls -G'
+        alias grep='grep --colour=auto'
+    fi
 fi
 
 # utility functions
